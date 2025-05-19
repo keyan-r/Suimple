@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <Version>1.0</Version>
+    <Title>Suimple</Title>
+    <Description>Plugin for Rhino and Grasshopper that simplifies the process of creating UIs for Grasshopper scripts.</Description>
+    <TargetExt>.rhp</TargetExt>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedResources\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Suimple_Demos\**" />
+    <Compile Remove="Testing\**" />
+    <EmbeddedResource Remove="Suimple_Demos\**" />
+    <EmbeddedResource Remove="Testing\**" />
+    <None Remove="Suimple_Demos\**" />
+    <None Remove="Testing\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Controls\SuimpleOutputFilterTree.cs" />
+    <Compile Remove="Views\Controls\NexusGuiOutputFilterTree.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\FindFile.png" />
+    <None Remove="Icons\FolderBlack.png" />
+    <None Remove="Icons\FolderWhite.png" />
+    <None Remove="Icons\PlayBlackCircle.png" />
+    <None Remove="Icons\PlayHollowCircle.png" />
+    <None Remove="Icons\PlaySimpleBlack.png" />
+    <None Remove="Icons\Reload.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\FindFile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\FolderBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\FolderWhite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\PlayBlackCircle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\PlayHollowCircle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\PlaySimpleBlack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\Reload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrchestratorRhinoCore\EmbeddedResources\plugin-utility.ico" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="7.23.22282.13001" />
+    <PackageReference Include="RhinoCommon" Version="7.23.22282.13001" IncludeAssets="compile;build" />
+    <PackageReference Include="RhinoWindows" Version="7.23.22282.13001" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Icons\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  
+</Project>
